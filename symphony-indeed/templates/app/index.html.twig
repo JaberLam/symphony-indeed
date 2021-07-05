@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Indeed symphony{% endblock %}
+
+{% block body %}
+    <div class="container">        
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                {% for offer in offer_list %}    
+                    <a href="/offer">
+                        <div class="card m-2 shadow border-0">
+                            <div class="card-body">
+                                <h2 class="card-title">{{ offer.title }}</h2>
+                                <ul>
+                                    <li class="card-subtitle mb-2 fst-italic text-muted">{{ offer.city }}</li>      
+                                    <li class="fs-6 fw-light">{{ offer.contrat }}</li> 
+                                    <li class="fs-6 fw-light">{{ offer.date }}</li>                        
+                                </ul>
+                            </div>
+                        </div>
+                    </a><br>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
